@@ -474,6 +474,29 @@
   }
 
   /**
+   * Listener Page - Trouble Toggle
+   * Show/hide the trouble tips section
+   */
+  function initTroubleToggle() {
+    const toggleBtn = document.getElementById('troubleToggle');
+    const tipsPanel = document.getElementById('troubleTips');
+    
+    if (!toggleBtn || !tipsPanel) return;
+    
+    toggleBtn.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      
+      this.setAttribute('aria-expanded', !isExpanded);
+      
+      if (isExpanded) {
+        tipsPanel.setAttribute('hidden', '');
+      } else {
+        tipsPanel.removeAttribute('hidden');
+      }
+    });
+  }
+
+  /**
    * Initialize all scripts when DOM is ready
    */
   function init() {
@@ -485,6 +508,7 @@
     initLanguageSwitcher();
     initVideoPlayer();
     initFormValidation();
+    initTroubleToggle();
   }
 
   // Run on DOMContentLoaded
@@ -503,7 +527,8 @@
     initMobileMenu,
     initLanguageSwitcher,
     initVideoPlayer,
-    initFormValidation
+    initFormValidation,
+    initTroubleToggle
   };
 
 })();
