@@ -2813,3 +2813,18 @@ h3 {
     border: 2px solid #000;
   }
 }
+@media (max-width: 767px){
+    .footer__col--brand{
+        align-items: center;
+        margin-bottom: var(--space-md);
+    }
+    .footer__description{
+        text-align: center;
+    }
+    .footer__grid{
+            text-align: center;
+    }
+    .footer__email{
+        justify-content: center;
+    }
+}
