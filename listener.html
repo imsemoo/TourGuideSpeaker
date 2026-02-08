@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<!-- ============================================
+     TourGuide Speakers - Listener Page
+     File: listener.html
+     Professional mobile-first listener page
+     ============================================ -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Join the tour and listen in real-time. Tap Start Listening to begin.">
+  <meta name="theme-color" content="#2563eb">
+  <title>Listener - Join Tour | TourGuide Speakers</title>
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="listener-page">
+
+  <!-- Header (same as landing page) -->
+  <header class="header" role="banner">
+    <div class="container header__inner">
+      <a href="landing.html" class="header__brand" aria-label="TourGuide Speakers Home">
+        <!-- Brand Icon -->
+        <svg class="header__brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <defs>
+            <linearGradient id="brandGradient" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#2563eb" />
+              <stop offset="1" stop-color="#8b5cf6" />
+            </linearGradient>
+          </defs>
+          <path d="M12 2C7.58 2 4 5.58 4 10C4 14 12 22 12 22C12 22 20 14 20 10C20 5.58 16.42 2 12 2Z"
+            fill="url(#brandGradient)" fill-opacity="0.1" stroke="url(#brandGradient)" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" />
+          <path
+            d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+            stroke="url(#brandGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M16 6.5C17.5 5.5 18.5 4.5 19 4" stroke="url(#brandGradient)" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round" opacity="0.8" />
+          <path d="M16 10C17.5 10 19 9 19.5 8.5" stroke="url(#brandGradient)" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round" opacity="0.8" />
+        </svg>
+        <span class="header__brand-text">TourGuide Speakers</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="header__nav header__nav--desktop" role="navigation" aria-label="Main navigation">
+        <a href="landing.html#how-it-works" class="header__link">How It Works</a>
+        <a href="landing.html#benefits" class="header__link">Benefits</a>
+
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+          <button class="lang-switcher__toggle" type="button" id="languageMenu" aria-haspopup="true" aria-expanded="false"
+            aria-label="Select language">
+            <svg class="lang-switcher__icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+              </path>
+            </svg>
+            <span class="lang-switcher__current">EN</span>
+            <svg class="lang-switcher__arrow" width="12" height="12" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <ul class="lang-switcher__menu" role="menu">
+            <li role="none">
+              <a class="lang-switcher__item lang-option" role="menuitem" href="#" data-lang="en-US" data-label="EN">
+                <svg class="lang-flag" viewBox="0 0 640 480" aria-hidden="true">
+                  <path fill="#012169" d="M0 0h640v480H0z" />
+                  <path fill="#FFF"
+                    d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z" />
+                  <path fill="#C8102E"
+                    d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z" />
+                  <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z" />
+                  <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z" />
+                </svg>
+                English
+              </a>
+            </li>
+            <li role="none">
+              <a class="lang-switcher__item lang-option" role="menuitem" href="#" data-lang="fr-FR" data-label="FR">
+                <svg class="lang-flag" viewBox="0 0 640 480" aria-hidden="true">
+                  <path fill="#002654" d="M0 0h213.3v480H0z" />
+                  <path fill="#FFF" d="M213.3 0h213.4v480H213.3z" />
+                  <path fill="#CE1126" d="M426.7 0H640v480H426.7z" />
+                </svg>
+                Français
+              </a>
+            </li>
+            <li role="none">
+              <a class="lang-switcher__item lang-option" role="menuitem" href="#" data-lang="es-ES" data-label="ES">
+                <svg class="lang-flag" viewBox="0 0 640 480" aria-hidden="true">
+                  <path fill="#AA151B" d="M0 0h640v480H0z" />
+                  <path fill="#F1BF00" d="M0 120h640v240H0z" />
+                </svg>
+                Español
+              </a>
+            </li>
+            <li role="none">
+              <a class="lang-switcher__item lang-option" role="menuitem" href="#" data-lang="de-DE" data-label="DE">
+                <svg class="lang-flag" viewBox="0 0 640 480" aria-hidden="true">
+                  <path fill="#000" d="M0 0h640v160H0z" />
+                  <path fill="#D00" d="M0 160h640v160H0z" />
+                  <path fill="#FFCE00" d="M0 320h640v160H0z" />
+                </svg>
+                Deutsch
+              </a>
+            </li>
+            <li role="none">
+              <a class="lang-switcher__item lang-option" role="menuitem" href="#" data-lang="ar-EG" data-label="ع">
+                <svg class="lang-flag" viewBox="0 0 640 480" aria-hidden="true">
+                  <path fill="#CE1126" d="M0 0h640v160H0z" />
+                  <path fill="#FFF" d="M0 160h640v160H0z" />
+                  <path fill="#000" d="M0 320h640v160H0z" />
+                </svg>
+                العربية
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <a href="landing.html" class="btn btn--ghost">Back to Home</a>
+      </nav>
+
+      <!-- Mobile Navigation Controls -->
+      <div class="header__mobile">
+        <button class="header__menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="header__menu-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu__overlay"></div>
+    <div class="mobile-menu__panel">
+      <!-- Panel Header -->
+      <div class="mobile-menu__header">
+        <div class="mobile-menu__brand">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C7.58 2 4 5.58 4 10C4 14 12 22 12 22C12 22 20 14 20 10C20 5.58 16.42 2 12 2Z" fill="#2563eb" fill-opacity="0.15" stroke="#2563eb" stroke-width="2"/>
+            <circle cx="12" cy="10" r="3" stroke="#2563eb" stroke-width="2"/>
+          </svg>
+          <span>TourGuide</span>
+        </div>
+        <button class="mobile-menu__close" type="button" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="mobile-menu__nav">
+        <a href="landing.html" class="mobile-menu__item">
+          <div class="mobile-menu__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </div>
+          <span>Home</span>
+        </a>
+        <a href="landing.html#how-it-works" class="mobile-menu__item">
+          <div class="mobile-menu__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="10 8 16 12 10 16 10 8"></polygon>
+            </svg>
+          </div>
+          <span>How It Works</span>
+        </a>
+        <a href="landing.html#benefits" class="mobile-menu__item">
+          <div class="mobile-menu__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <span>Benefits</span>
+        </a>
+      </nav>
+
+      <!-- Language Selector -->
+      <div class="mobile-menu__footer">
+        <span class="mobile-menu__footer-label">Language</span>
+        <div class="mobile-menu__langs">
+          <button class="mobile-menu__lang is-active" data-lang="en-US">EN</button>
+          <button class="mobile-menu__lang" data-lang="fr-FR">FR</button>
+          <button class="mobile-menu__lang" data-lang="es-ES">ES</button>
+          <button class="mobile-menu__lang" data-lang="de-DE">DE</button>
+          <button class="mobile-menu__lang" data-lang="ar-EG">ع</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="listener-main" id="main-content">
+    <div class="listener-container">
+
+      <!-- Role Badge -->
+      <div class="listener-role-badge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M3 18v-6a9 9 0 0 1 18 0v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Listener</span>
+      </div>
+
+      <!-- Step Indicator -->
+      <div class="listener-step-indicator">
+        <span class="listener-step-current">Step 3</span>
+        <span class="listener-step-divider">of</span>
+        <span class="listener-step-total">4</span>
+      </div>
+
+      <!-- Status Card -->
+      <div class="listener-status-card">
+        <!-- Headphone Icon -->
+        <div class="listener-icon-wrapper">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 18v-6a9 9 0 0 1 18 0v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <h1 class="listener-card-title">You're ready to join the tour</h1>
+        <p class="listener-card-subtitle">Tap <strong>Start Listening</strong> and keep your earbuds connected during the tour.</p>
+
+        <!-- Status Message (backend hook - hidden by default) -->
+        <div id="statusContainer" class="listener-status-message">
+          <strong id="statusMessage" style="display: none;">Your tour will start shortly…</strong>
+        </div>
+
+        <!-- Tour Duration Pill -->
+        <div id="timerContainer" class="listener-duration-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span>Tour Duration:</span>
+          <strong id="tourTimer">00:00</strong>
+        </div>
+      </div>
+
+      <!-- Primary CTA - Listen Button Container (backend hook) -->
+      <div id="listenContainer" class="listener-cta-container" style="display: block;">
+        <button id="listenBtn" class="listener-btn listener-btn--primary">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/>
+          </svg>
+          <span>Start Listening</span>
+        </button>
+      </div>
+
+      <!-- Mute Container (backend hook) -->
+      <div id="muteContainer" class="listener-mute-container" style="display: none;">
+        <button id="muteBtn" class="listener-btn listener-btn--mute">
+          <svg class="mute-icon-off" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="mute-text">Mute</span>
+        </button>
+      </div>
+
+      <!-- Audio Element (backend hook - hidden) -->
+      <audio id="audioPlayer" autoplay playsinline style="display:none"></audio>
+
+      <!-- Having Trouble Toggle -->
+      <button class="listener-trouble-toggle" type="button" id="troubleToggle" aria-expanded="false" aria-controls="troubleTips">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        <span>Having trouble?</span>
+        <svg class="trouble-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+
+      <!-- Trouble Tips (hidden by default) -->
+      <div class="listener-trouble-tips" id="troubleTips" hidden>
+        <ul class="listener-tips-list">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+            <span>Make sure your volume is up</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+            <span>Keep this page open</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M23 7l-7 5 7 5V7z"></path>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+            </svg>
+            <span>If you were redirected, ask the guide to show the QR again</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer (same as landing page) -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <!-- Footer Main Grid -->
+      <div class="footer__grid">
+
+        <!-- Brand Column -->
+        <div class="footer__col footer__col--brand">
+          <div class="footer__brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <defs>
+                <linearGradient id="brandGradientFooter" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#2563eb" />
+                  <stop offset="1" stop-color="#8b5cf6" />
+                </linearGradient>
+              </defs>
+              <path d="M12 2C7.58 2 4 5.58 4 10C4 14 12 22 12 22C12 22 20 14 20 10C20 5.58 16.42 2 12 2Z"
+                fill="url(#brandGradientFooter)" fill-opacity="0.1" stroke="url(#brandGradientFooter)"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+                stroke="url(#brandGradientFooter)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M16 6.5C17.5 5.5 18.5 4.5 19 4" stroke="url(#brandGradientFooter)" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" opacity="0.8" />
+              <path d="M16 10C17.5 10 19 9 19.5 8.5" stroke="url(#brandGradientFooter)" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" opacity="0.8" />
+            </svg>
+            <span>TourGuide Speakers</span>
+          </div>
+          <p class="footer__description">
+            A modern audio solution for tour operators who want to deliver clear, real‑time commentary to every
+            client.
+            Whether guiding small groups or large crowds, your voice reaches everyone instantly and effortlessly.
+          </p>
+          <!-- Social Links -->
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer__col">
+          <h4 class="footer__heading">Explore</h4>
+          <nav class="footer__nav" aria-label="Explore links">
+            <a href="landing.html" class="footer__link">Home</a>
+            <a href="landing.html#how-it-works" class="footer__link">How It Works</a>
+            <a href="landing.html#benefits" class="footer__link">Benefits</a>
+            <a href="#" class="footer__link">FAQ</a>
+          </nav>
+        </div>
+
+        <!-- Legal Column -->
+        <div class="footer__col">
+          <h4 class="footer__heading">Legal</h4>
+          <nav class="footer__nav" aria-label="Legal links">
+            <a href="#" class="footer__link">Privacy Policy</a>
+            <a href="#" class="footer__link">Terms of Service</a>
+            <a href="#" class="footer__link">Cookie Policy</a>
+          </nav>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="footer__col footer__col--contact">
+          <h4 class="footer__heading">Contact</h4>
+          <div class="footer__contact">
+            <a href="#" class="footer__link">About Us</a>
+            <a href="mailto:agboudreau@ottawatechconsulting.com" class="footer__link footer__email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              agboudreau@ottawatechconsulting.com
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 TourGuide Speakers. All rights reserved.</p>
+        <p class="footer__tagline">A "whisper system" for modern tour guides.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for UI interactions -->
+  <script src="assets/js/main.js" defer></script>
+
+  <!-- Backend Scripts (preserved from baseline) -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.signalR/2.2.2/jquery.signalR.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/nosleep.js@0.12.0/dist/NoSleep.min.js"></script>
+  <!-- SignalR Hub script - replace with your actual hub URL -->
+  <!-- <script src="/signalr/hubs"></script> -->
+
+  <script>
+    // Backend hooks preserved - this is placeholder code
+    // The actual implementation will be provided by the backend
+    
+    var chat = null; // $.connection.tourGuideHub when SignalR is loaded
+    var peerConnection = null;
+    var roomId = ""; // Will be set from URL
+    var speakerId = null;
+    var tourStartTime = null;
+    var tourTimerInterval = null;
+    let wakeLock = null;
+    var hasListened = false;
+    var noSleep = null; // new NoSleep() when lib is loaded
+
+    // Mute/Unmute button handler
+    document.getElementById("muteBtn").addEventListener("click", function () {
+      const audio = document.getElementById("audioPlayer");
+      const muteText = this.querySelector('.mute-text');
+
+      if (audio.muted) {
+        audio.muted = false;
+        muteText.textContent = "Mute";
+        this.classList.remove('is-muted');
+      } else {
+        audio.muted = true;
+        muteText.textContent = "Unmute";
+        this.classList.add('is-muted');
+      }
+    });
+
+    // Listen button handler
+    document.getElementById("listenBtn").addEventListener("click", function () {
+      hasListened = true;
+
+      const audio = document.getElementById("audioPlayer");
+      audio.muted = false;
+      audio.play().catch(err => console.warn("Autoplay blocked:", err));
+
+      document.getElementById("timerContainer").style.display = "flex";
+      document.getElementById("listenContainer").style.display = "none";
+      document.getElementById("muteContainer").style.display = "flex";
+    });
+
+    // Tour duration timer
+    function startTourTimer() {
+      tourStartTime = Date.now();
+      if (tourTimerInterval) clearInterval(tourTimerInterval);
+
+      tourTimerInterval = setInterval(() => {
+        const elapsed = Date.now() - tourStartTime;
+        const minutes = Math.floor(elapsed / 60000);
+        const seconds = Math.floor((elapsed % 60000) / 1000);
+
+        document.getElementById("tourTimer").textContent =
+          String(minutes).padStart(2, '0') + ":" +
+          String(seconds).padStart(2, '0');
+      }, 1000);
+    }
+
+    // Keep screen awake
+    async function keepAwake() {
+      if ("wakeLock" in navigator) {
+        try {
+          wakeLock = await navigator.wakeLock.request("screen");
+          console.log("Wake Lock active");
+
+          wakeLock.addEventListener("release", () => {
+            console.log("Wake Lock released — re-acquiring");
+            keepAwake();
+          });
+        } catch (err) {
+          console.warn("Wake Lock failed, falling back to NoSleep:", err);
+          if (noSleep) noSleep.enable();
+        }
+      } else {
+        console.log("Wake Lock not supported — using NoSleep");
+        if (noSleep) noSleep.enable();
+      }
+    }
+
+    // iOS fallback: first tap enables audio
+    document.addEventListener("click", function () {
+      const audio = document.getElementById("audioPlayer");
+      if (audio.paused) {
+        audio.play().catch(() => {});
+      }
+    }, { once: true });
+  </script>
+</body>
+
+</html>
