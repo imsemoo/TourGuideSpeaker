@@ -3025,3 +3025,282 @@ h3 {
     border: 2px solid #000;
   }
 }
+
+/* ===== i18n Responsive Fix: prevent horizontal overflow ===== */
+
+/* --- A) Global overflow-x prevention --- */
+html,
+body {
+  overflow-x: hidden;
+}
+
+.trial-container,
+.listener-container,
+.end-container {
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* --- B) Defensive text rules for all interactive / label elements --- */
+.btn,
+.trial-btn,
+.listener-btn,
+.end-btn,
+.mobile-menu__btn,
+.section-badge,
+.callout,
+.trial-role-badge,
+.listener-role-badge,
+.end-role-badge,
+.trial-step-indicator,
+.listener-step-indicator,
+.end-step-indicator,
+.step__title,
+.benefit__title,
+.footer__link,
+.footer__heading,
+.header__link,
+.lang-switcher__item,
+.mobile-menu__item span,
+.mobile-menu__lang,
+.listener-trouble-toggle span,
+.trial-status span,
+.listener-duration-pill span,
+.listener-duration-pill strong {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Allow buttons to wrap text when needed (override base nowrap) */
+.btn,
+.trial-btn,
+.listener-btn,
+.end-btn,
+.mobile-menu__btn {
+  white-space: normal;
+  max-width: 100%;
+  height: auto;
+  min-height: 48px;
+}
+
+/* Keep button text on one line on desktop, allow truncation if extreme */
+@media (min-width: 768px) {
+  .header__nav--desktop .btn {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+}
+
+/* --- C) Header mobile wrapping --- */
+@media (max-width: 767px) {
+  .header__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    min-height: 0;
+  }
+
+  .header__brand {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .header__brand-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+    display: inline-block;
+  }
+
+  .header__mobile {
+    flex-shrink: 0;
+  }
+
+  .header__mobile .btn {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 130px;
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+}
+
+/* --- D) CTA / Hero buttons: stack on mobile --- */
+@media (max-width: 480px) {
+  .btn-group,
+  .btn-group--roles,
+  .btn-group--cta {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+  }
+
+  .btn-with-role {
+    width: 100%;
+  }
+
+  .btn-with-role .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__actions {
+    width: 100%;
+  }
+
+  /* Callout fits viewport */
+  .callout {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  /* Section badges */
+  .section-badge {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* Trial page buttons full-width */
+  .trial-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .trial-btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Listener page buttons full-width */
+  .listener-btn {
+    width: 100%;
+    min-width: 0;
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .listener-cta-container,
+  .listener-mute-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* End page button */
+  .end-btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .end-cta-container {
+    width: 100%;
+  }
+
+  /* Step cards: single column */
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- E) Footer overflow prevention --- */
+.footer__grid {
+  max-width: 100%;
+}
+
+.footer__col {
+  min-width: 0;
+}
+
+.footer__email,
+.footer__link,
+.footer__description,
+.footer__brand span {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 480px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__col--brand,
+  .footer__col--contact {
+    grid-column: span 1;
+  }
+
+  .footer__social {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* --- F) Additional mobile safety at 480px --- */
+@media (max-width: 480px) {
+  /* Language switcher dropdown doesn't overflow viewport */
+  .lang-switcher__menu {
+    max-width: calc(100vw - 2rem);
+    right: 0;
+  }
+
+  /* Mobile menu language buttons wrap */
+  .mobile-menu__langs {
+    flex-wrap: wrap;
+  }
+
+  /* Benefit cards full width */
+  .benefit {
+    flex: 1 1 100%;
+  }
+
+  /* Trial instruction text */
+  .trial-instruction-primary {
+    max-width: 100%;
+  }
+
+  .trial-instruction-primary p {
+    overflow-wrap: anywhere;
+  }
+
+  /* Listener card text */
+  .listener-card-title,
+  .listener-card-subtitle,
+  .end-card-title,
+  .end-card-subtitle {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* Trial tips */
+  .trial-tips__list li span,
+  .listener-tips-list li span {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
+/* Tablet safety net */
+@media (max-width: 768px) {
+  .hero__subtitle,
+  .cta__subtitle {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .hero__title {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
+/* ===== End i18n Responsive Fix ===== */
